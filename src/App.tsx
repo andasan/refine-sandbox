@@ -10,7 +10,7 @@ const App: React.FC = () => {
     return (
         <Refine
             routerProvider={routerProvider}
-            dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
+            dataProvider={dataProvider(process.env.REACT_APP_API_URL as string)}
             resources={[{ 
               name: 'posts', 
               list: PostList, 
