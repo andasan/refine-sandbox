@@ -4,7 +4,7 @@ import dataProvider from "@pankod/refine-simple-rest";
 
 import "@pankod/refine/dist/styles.min.css";
 
-import { PostList, PostShow, PostEdit } from "pages/posts";
+import { PostList, PostShow, PostEdit, PostCreate } from "pages/posts";
 
 const App: React.FC = () => {
     return (
@@ -15,7 +15,8 @@ const App: React.FC = () => {
               name: 'posts', 
               list: PostList, 
               show: PostShow,
-              edit: PostEdit
+              edit: PostEdit,
+              create: PostCreate
             }]}
         />
     );
