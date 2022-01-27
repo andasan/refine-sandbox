@@ -16,7 +16,8 @@ const App: React.FC = () => {
               list: PostList, 
               show: PostShow,
               edit: PostEdit,
-              create: PostCreate
+              create: PostCreate,
+              canDelete: true
             }]}
         />
     );

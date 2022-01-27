@@ -1,5 +1,5 @@
 import { Show, useShow, Typography, Tag, useOne } from "@pankod/refine";
-import { IPost, ICategory } from "interface";
+import { ICategory } from "interface";
 
 const { Title, Text } = Typography;
 
