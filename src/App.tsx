@@ -5,11 +5,13 @@ import dataProvider from "@pankod/refine-simple-rest";
 import "@pankod/refine/dist/styles.min.css";
 
 import { PostList, PostShow, PostEdit, PostCreate } from "pages/posts";
+import { authProvider } from "auth/auth-provider";
 
 const App: React.FC = () => {
     return (
         <Refine
             routerProvider={routerProvider}
+            authProvider={authProvider}
             dataProvider={dataProvider(process.env.REACT_APP_API_URL as string)}
             resources={[{ 
               name: 'posts', 

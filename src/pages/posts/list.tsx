@@ -13,6 +13,7 @@ import {
   Space,
   EditButton,
   DeleteButton,
+  usePermissions
 } from "@pankod/refine";
 
 import { IPost, ICategory } from "interface";
@@ -30,8 +31,10 @@ export const PostList: React.FC = () => {
     })
     const { selectProps: categoriesSelectProps } = useSelect<ICategory>({ resource: "categories" })
 
+    const { data: permissionsData } = usePermissions();
+
     return(
-        <List>
+        <List canCreate={permissionsData?.includes("admin")}>
             <Table {...tableProps} rowKey="id">
                 <Table.Column dataIndex="title" title="Title" />
                 <Table.Column dataIndex="status" title="Status" render={value => <TagField value={value} />} />
