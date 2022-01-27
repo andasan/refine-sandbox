@@ -4,14 +4,14 @@ import dataProvider from "@pankod/refine-simple-rest";
 
 import "@pankod/refine/dist/styles.min.css";
 
-import { PostList } from "pages/posts/list";
+import { PostList, PostShow } from "pages/posts";
 
 const App: React.FC = () => {
     return (
         <Refine
             routerProvider={routerProvider}
             dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
-            resources={[{ name: 'posts', list: PostList }]}
+            resources={[{ name: 'posts', list: PostList, show: PostShow }]}
         />
     );
 };
