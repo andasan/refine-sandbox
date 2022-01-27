@@ -10,6 +10,8 @@ import {
   useSelect,
   FilterDropdown,
   ShowButton,
+  Space,
+  EditButton,
 } from "@pankod/refine";
 
 import { IPost, ICategory } from "interface";
@@ -56,11 +58,18 @@ export const PostList: React.FC = () => {
                     dataIndex="actions"
                     render={(_text, record): React.ReactNode => {
                         return(
-                            <ShowButton 
-                                size="small"
-                                recordItemId={record.id}
-                                hideText
-                            />
+                            <Space>
+                                <ShowButton 
+                                    size="small"
+                                    recordItemId={record.id}
+                                    hideText
+                                />
+                                <EditButton 
+                                    size="small"
+                                    recordItemId={record.id}
+                                    hideText
+                                />
+                            </Space>
                         )
                     }}
                 />
